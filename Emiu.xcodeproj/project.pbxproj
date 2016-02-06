@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290DC4ED1C5CF97700992A6F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290DC4EC1C5CF97700992A6F /* ProfileViewController.swift */; };
+		290DC4EF1C5CFA4900992A6F /* PeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290DC4EE1C5CFA4900992A6F /* PeckViewController.swift */; };
+		290DC4F41C5DD20000992A6F /* ServerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290DC4F31C5DD20000992A6F /* ServerMessage.swift */; };
+		290DC4F61C5DE2E700992A6F /* XmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290DC4F51C5DE2E700992A6F /* XmlParser.swift */; };
+		2916D2C51C65F97700222F19 /* StrUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916D2C41C65F97700222F19 /* StrUtil.swift */; };
 		29A6180E1C5C79DB00D3C36F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6180D1C5C79DB00D3C36F /* AppDelegate.swift */; };
-		29A618101C5C79DB00D3C36F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6180F1C5C79DB00D3C36F /* ViewController.swift */; };
 		29A618131C5C79DB00D3C36F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A618111C5C79DB00D3C36F /* Main.storyboard */; };
 		29A618151C5C79DB00D3C36F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A618141C5C79DB00D3C36F /* Assets.xcassets */; };
-		29A618181C5C79DB00D3C36F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A618161C5C79DB00D3C36F /* LaunchScreen.storyboard */; };
 		29A618231C5C79DB00D3C36F /* EmiuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A618221C5C79DB00D3C36F /* EmiuTests.swift */; };
 		29A6182E1C5C79DB00D3C36F /* EmiuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6182D1C5C79DB00D3C36F /* EmiuUITests.swift */; };
+		29A6183D1C5C7F7500D3C36F /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A6183B1C5C7F7500D3C36F /* Contacts.framework */; };
+		29A6183E1C5C7F7500D3C36F /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A6183C1C5C7F7500D3C36F /* ContactsUI.framework */; };
+		29A618451C5C84F700D3C36F /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A618441C5C84F700D3C36F /* ContactViewController.swift */; };
+		29A6184A1C5C93F500D3C36F /* ContactUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A618491C5C93F500D3C36F /* ContactUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290DC4EC1C5CF97700992A6F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		290DC4EE1C5CFA4900992A6F /* PeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeckViewController.swift; path = ViewController/PeckViewController.swift; sourceTree = "<group>"; };
+		290DC4F31C5DD20000992A6F /* ServerMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerMessage.swift; path = Utils/ServerMessage.swift; sourceTree = "<group>"; };
+		290DC4F51C5DE2E700992A6F /* XmlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XmlParser.swift; path = Utils/XmlParser.swift; sourceTree = "<group>"; };
+		2916D2C41C65F97700222F19 /* StrUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StrUtil.swift; path = Utils/StrUtil.swift; sourceTree = "<group>"; };
 		29A6180A1C5C79DB00D3C36F /* Emiu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emiu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A6180D1C5C79DB00D3C36F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29A6180F1C5C79DB00D3C36F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29A618121C5C79DB00D3C36F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29A618141C5C79DB00D3C36F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		29A618171C5C79DB00D3C36F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29A618191C5C79DB00D3C36F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29A6181E1C5C79DB00D3C36F /* EmiuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmiuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A618221C5C79DB00D3C36F /* EmiuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmiuTests.swift; sourceTree = "<group>"; };
@@ -47,6 +57,10 @@
 		29A618291C5C79DB00D3C36F /* EmiuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmiuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A6182D1C5C79DB00D3C36F /* EmiuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmiuUITests.swift; sourceTree = "<group>"; };
 		29A6182F1C5C79DB00D3C36F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29A6183B1C5C7F7500D3C36F /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		29A6183C1C5C7F7500D3C36F /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		29A618441C5C84F700D3C36F /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewController.swift; path = ViewController/ContactViewController.swift; sourceTree = "<group>"; };
+		29A618491C5C93F500D3C36F /* ContactUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactUtil.swift; path = Utils/ContactUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A6183D1C5C7F7500D3C36F /* Contacts.framework in Frameworks */,
+				29A6183E1C5C7F7500D3C36F /* ContactsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +90,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290DC4F01C5DD06400992A6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		29A618011C5C79DA00D3C36F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +104,7 @@
 				29A618211C5C79DB00D3C36F /* EmiuTests */,
 				29A6182C1C5C79DB00D3C36F /* EmiuUITests */,
 				29A6180B1C5C79DB00D3C36F /* Products */,
+				29A6183F1C5C7F8F00D3C36F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +122,12 @@
 			isa = PBXGroup;
 			children = (
 				29A6180D1C5C79DB00D3C36F /* AppDelegate.swift */,
-				29A6180F1C5C79DB00D3C36F /* ViewController.swift */,
-				29A618111C5C79DB00D3C36F /* Main.storyboard */,
 				29A618141C5C79DB00D3C36F /* Assets.xcassets */,
-				29A618161C5C79DB00D3C36F /* LaunchScreen.storyboard */,
 				29A618191C5C79DB00D3C36F /* Info.plist */,
+				290DC4F01C5DD06400992A6F /* Models */,
+				29A618461C5C938A00D3C36F /* Utils */,
+				29A618411C5C842800D3C36F /* Storyboard */,
+				29A618401C5C841500D3C36F /* ViewController */,
 			);
 			path = Emiu;
 			sourceTree = "<group>";
@@ -123,6 +148,44 @@
 				29A6182F1C5C79DB00D3C36F /* Info.plist */,
 			);
 			path = EmiuUITests;
+			sourceTree = "<group>";
+		};
+		29A6183F1C5C7F8F00D3C36F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29A6183B1C5C7F7500D3C36F /* Contacts.framework */,
+				29A6183C1C5C7F7500D3C36F /* ContactsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29A618401C5C841500D3C36F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29A618441C5C84F700D3C36F /* ContactViewController.swift */,
+				290DC4EC1C5CF97700992A6F /* ProfileViewController.swift */,
+				290DC4EE1C5CFA4900992A6F /* PeckViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		29A618411C5C842800D3C36F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				29A618111C5C79DB00D3C36F /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		29A618461C5C938A00D3C36F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				290DC4F31C5DD20000992A6F /* ServerMessage.swift */,
+				29A618491C5C93F500D3C36F /* ContactUtil.swift */,
+				290DC4F51C5DE2E700992A6F /* XmlParser.swift */,
+				2916D2C41C65F97700222F19 /* StrUtil.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +295,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29A618181C5C79DB00D3C36F /* LaunchScreen.storyboard in Resources */,
 				29A618151C5C79DB00D3C36F /* Assets.xcassets in Resources */,
 				29A618131C5C79DB00D3C36F /* Main.storyboard in Resources */,
 			);
@@ -259,8 +321,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29A618101C5C79DB00D3C36F /* ViewController.swift in Sources */,
+				290DC4F41C5DD20000992A6F /* ServerMessage.swift in Sources */,
 				29A6180E1C5C79DB00D3C36F /* AppDelegate.swift in Sources */,
+				29A6184A1C5C93F500D3C36F /* ContactUtil.swift in Sources */,
+				290DC4EF1C5CFA4900992A6F /* PeckViewController.swift in Sources */,
+				290DC4ED1C5CF97700992A6F /* ProfileViewController.swift in Sources */,
+				29A618451C5C84F700D3C36F /* ContactViewController.swift in Sources */,
+				290DC4F61C5DE2E700992A6F /* XmlParser.swift in Sources */,
+				2916D2C51C65F97700222F19 /* StrUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,14 +370,6 @@
 				29A618121C5C79DB00D3C36F /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		29A618161C5C79DB00D3C36F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29A618171C5C79DB00D3C36F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -402,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Emiu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = noguchikaito.Emiu;
@@ -413,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Emiu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = noguchikaito.Emiu;
@@ -487,6 +549,7 @@
 				29A618341C5C79DB00D3C36F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29A618351C5C79DB00D3C36F /* Build configuration list for PBXNativeTarget "EmiuTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +558,7 @@
 				29A618371C5C79DB00D3C36F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29A618381C5C79DB00D3C36F /* Build configuration list for PBXNativeTarget "EmiuUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +567,7 @@
 				29A6183A1C5C79DB00D3C36F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
