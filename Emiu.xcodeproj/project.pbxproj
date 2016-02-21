@@ -12,6 +12,13 @@
 		290DC4F41C5DD20000992A6F /* ServerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290DC4F31C5DD20000992A6F /* ServerMessage.swift */; };
 		290DC4F61C5DE2E700992A6F /* XmlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290DC4F51C5DE2E700992A6F /* XmlParser.swift */; };
 		2916D2C51C65F97700222F19 /* StrUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916D2C41C65F97700222F19 /* StrUtil.swift */; };
+		2916D2C71C66D69D00222F19 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916D2C61C66D69D00222F19 /* FriendListViewController.swift */; };
+		2918081F1C7048C500204CF5 /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2918081E1C7048C500204CF5 /* FriendDetailViewController.swift */; };
+		29493FDB1C6F7EB200602E37 /* ContactRecordAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29493FDA1C6F7EB200602E37 /* ContactRecordAccessor.swift */; };
+		2987FDF41C79B31F0078EF3F /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987FDF31C79B31F0078EF3F /* TimeLineViewController.swift */; };
+		2987FDF61C79B5CA0078EF3F /* TimeLineRecordAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987FDF51C79B5CA0078EF3F /* TimeLineRecordAccessor.swift */; };
+		2987FDF91C79C2730078EF3F /* ContactDetailTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987FDF81C79C2730078EF3F /* ContactDetailTable.swift */; };
+		2987FDFB1C79C3460078EF3F /* UiUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2987FDFA1C79C3460078EF3F /* UiUtil.swift */; };
 		29A6180E1C5C79DB00D3C36F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A6180D1C5C79DB00D3C36F /* AppDelegate.swift */; };
 		29A618131C5C79DB00D3C36F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A618111C5C79DB00D3C36F /* Main.storyboard */; };
 		29A618151C5C79DB00D3C36F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A618141C5C79DB00D3C36F /* Assets.xcassets */; };
@@ -46,6 +53,13 @@
 		290DC4F31C5DD20000992A6F /* ServerMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerMessage.swift; path = Utils/ServerMessage.swift; sourceTree = "<group>"; };
 		290DC4F51C5DE2E700992A6F /* XmlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XmlParser.swift; path = Utils/XmlParser.swift; sourceTree = "<group>"; };
 		2916D2C41C65F97700222F19 /* StrUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StrUtil.swift; path = Utils/StrUtil.swift; sourceTree = "<group>"; };
+		2916D2C61C66D69D00222F19 /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendListViewController.swift; path = ViewController/FriendListViewController.swift; sourceTree = "<group>"; };
+		2918081E1C7048C500204CF5 /* FriendDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendDetailViewController.swift; path = ViewController/FriendDetailViewController.swift; sourceTree = "<group>"; };
+		29493FDA1C6F7EB200602E37 /* ContactRecordAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactRecordAccessor.swift; path = Models/ContactRecordAccessor.swift; sourceTree = "<group>"; };
+		2987FDF31C79B31F0078EF3F /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeLineViewController.swift; path = ViewController/TimeLineViewController.swift; sourceTree = "<group>"; };
+		2987FDF51C79B5CA0078EF3F /* TimeLineRecordAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeLineRecordAccessor.swift; path = Models/TimeLineRecordAccessor.swift; sourceTree = "<group>"; };
+		2987FDF81C79C2730078EF3F /* ContactDetailTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailTable.swift; sourceTree = "<group>"; };
+		2987FDFA1C79C3460078EF3F /* UiUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UiUtil.swift; sourceTree = "<group>"; };
 		29A6180A1C5C79DB00D3C36F /* Emiu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emiu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A6180D1C5C79DB00D3C36F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29A618121C5C79DB00D3C36F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,8 +107,18 @@
 		290DC4F01C5DD06400992A6F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				29493FDA1C6F7EB200602E37 /* ContactRecordAccessor.swift */,
+				2987FDF51C79B5CA0078EF3F /* TimeLineRecordAccessor.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		2987FDF71C79C1D50078EF3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2987FDF81C79C2730078EF3F /* ContactDetailTable.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		29A618011C5C79DA00D3C36F = {
@@ -127,6 +151,7 @@
 				290DC4F01C5DD06400992A6F /* Models */,
 				29A618461C5C938A00D3C36F /* Utils */,
 				29A618411C5C842800D3C36F /* Storyboard */,
+				2987FDF71C79C1D50078EF3F /* View */,
 				29A618401C5C841500D3C36F /* ViewController */,
 			);
 			path = Emiu;
@@ -162,9 +187,12 @@
 		29A618401C5C841500D3C36F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2916D2C61C66D69D00222F19 /* FriendListViewController.swift */,
+				2918081E1C7048C500204CF5 /* FriendDetailViewController.swift */,
 				29A618441C5C84F700D3C36F /* ContactViewController.swift */,
-				290DC4EC1C5CF97700992A6F /* ProfileViewController.swift */,
+				2987FDF31C79B31F0078EF3F /* TimeLineViewController.swift */,
 				290DC4EE1C5CFA4900992A6F /* PeckViewController.swift */,
+				290DC4EC1C5CF97700992A6F /* ProfileViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -184,6 +212,7 @@
 				29A618491C5C93F500D3C36F /* ContactUtil.swift */,
 				290DC4F51C5DE2E700992A6F /* XmlParser.swift */,
 				2916D2C41C65F97700222F19 /* StrUtil.swift */,
+				2987FDFA1C79C3460078EF3F /* UiUtil.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -323,9 +352,16 @@
 			files = (
 				290DC4F41C5DD20000992A6F /* ServerMessage.swift in Sources */,
 				29A6180E1C5C79DB00D3C36F /* AppDelegate.swift in Sources */,
+				2918081F1C7048C500204CF5 /* FriendDetailViewController.swift in Sources */,
+				2916D2C71C66D69D00222F19 /* FriendListViewController.swift in Sources */,
 				29A6184A1C5C93F500D3C36F /* ContactUtil.swift in Sources */,
+				2987FDF41C79B31F0078EF3F /* TimeLineViewController.swift in Sources */,
+				2987FDF91C79C2730078EF3F /* ContactDetailTable.swift in Sources */,
+				2987FDFB1C79C3460078EF3F /* UiUtil.swift in Sources */,
 				290DC4EF1C5CFA4900992A6F /* PeckViewController.swift in Sources */,
 				290DC4ED1C5CF97700992A6F /* ProfileViewController.swift in Sources */,
+				29493FDB1C6F7EB200602E37 /* ContactRecordAccessor.swift in Sources */,
+				2987FDF61C79B5CA0078EF3F /* TimeLineRecordAccessor.swift in Sources */,
 				29A618451C5C84F700D3C36F /* ContactViewController.swift in Sources */,
 				290DC4F61C5DE2E700992A6F /* XmlParser.swift in Sources */,
 				2916D2C51C65F97700222F19 /* StrUtil.swift in Sources */,

@@ -11,18 +11,17 @@ import UIKit
 import Contacts
 
 class ContactViewController : UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
+
+    var userId = String()
+    var allContacts = [ContactRecordAccessor]()
     @IBOutlet weak var contactTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         contactTableView.delegate = self;
         contactTableView.dataSource = self;
-        if(ServerMessage.loginAccount("123", pass: "123")){
-            print("OK")
-        }else{
-            print("NO")
-        }
+        allContacts = ContactUtil.getAllContactRecord()
+        print(allContacts)
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,40 +30,32 @@ class ContactViewController : UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4;
+        return 1;
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
-
-        var row = 0;
-        switch section {
-            case 0:
-                // name
-                row = 4
-            case 1:
-                // tel
-                row = 4
-            case 2:
-                // email
-                row = 4
-            case 3:
-                // etc
-                row = 4
-            default:
-                break
-            
-        }
-        return row;
+        return allContacts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        cell.textLabel?.text = "";
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        let contactData = allContacts[indexPath.row] as ContactRecordAccessor
+
+        cell.textLabel?.text = contactData.familyName + contactData.givenName;
+        
+        print(cell.textLabel?.text)
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
-       
+        let contactData = allContacts[indexPath.row] as ContactRecordAccessor
+        print("userID = " + userId)
+        print("contactId = " + contactData.contactId)
+        ServerMessage.updateFriendData(userId, contactId: contactData.contactId)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+        
+    @IBAction func backBtnAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

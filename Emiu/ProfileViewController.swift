@@ -66,21 +66,21 @@ class ProfileViewController : UIViewController,UITableViewDelegate,UITableViewDa
         // 名よみ
         tfPhoneticGivenName = self.createTextField(tfFrame,text:"",placeholder: "名よみ")
         tfPhoneticGivenName.tag = 4
-
         nameArray.addObject(tfPhoneticGivenName)
          // 職業
         tfOrganization = self.createTextField(tfFrame,text:"",placeholder: "会社")
         // 誕生日
         tfBirthday = self.createTextField(tfFrame,text:"",placeholder: "誕生日")
+        
         // UILabel
         // 電話番号を追加
         addPhoneLabel = UILabel.init(frame: CGRectMake(50, 10, self.view.layer.frame.size.width - 60, 30))
         addPhoneLabel.text = "電話番号を追加"
-        
         // メールを追加
         addEmailLabel = UILabel.init(frame: CGRectMake(50, 10, self.view.layer.frame.size.width - 60, 30))
         addEmailLabel.text = "メールを追加"
         
+        // SQLデータを反映
         ServerMessage.selectUserData({(dataArray) in
             dispatch_async(dispatch_get_main_queue(), {
                 self.setUserDataBySql(dataArray)
@@ -89,6 +89,9 @@ class ProfileViewController : UIViewController,UITableViewDelegate,UITableViewDa
         })
     }
     
+    /**
+     * サーバーから取得したデータを反映させる
+     */
     func setUserDataBySql(dataArray:NSArray){
         print(dataArray)
         var cutArray = NSArray()
@@ -96,8 +99,8 @@ class ProfileViewController : UIViewController,UITableViewDelegate,UITableViewDa
         var typeInt = Int()
         var text = String()
         print(dataArray);
-        for var data in dataArray{
-            cutArray = StrUtil.transformStrByKeyword(data as! String, key: "_")
+        for data in dataArray{
+            cutArray = StrUtil.transformDivideByKeyword(data as! String, key: "_")
             if(cutArray.count > 1){
                 typeStr = cutArray.objectAtIndex(0) as! String
                 typeInt = Int(typeStr)!
@@ -145,7 +148,6 @@ class ProfileViewController : UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
-        
         var row = 0;
         switch section {
         case 0:
@@ -155,12 +157,13 @@ class ProfileViewController : UIViewController,UITableViewDelegate,UITableViewDa
         case 2:
             row = 1
         case 3:
+            // +1:電話番号を追加
             row = phoneArray.count + 1
         case 4:
+            // +1:メールを追加
             row = emailArray.count + 1
         default:
             break
-            
         }
         return row;
     }
@@ -228,19 +231,30 @@ class ProfileViewController : UIViewController,UITableViewDelegate,UITableViewDa
         return UITableViewCellEditingStyle.None
     }
     
+    /**
+     * TextField編集開始時
+     */
     func textFieldDidBeginEditing(textField: UITextField) {
         tfEditing = textField
     }
     
+    /**
+     * TextField編集終了時
+     */
     func textFieldDidEndEditing(textField: UITextField) {
         tfEditing.resignFirstResponder()
     }
     
+    /**
+     * スクロール開始時
+     */
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         tfEditing.resignFirstResponder()
     }
     
-    
+    /**
+     * cellの追加時
+     */
     func insertCell(indexPath:NSIndexPath){
         if(indexPath.section == 3){
             tfPhoneNumber = createTextField(tfFrame,text:"",placeholder: "電話番号")
@@ -252,6 +266,9 @@ class ProfileViewController : UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
+    /**
+     * cellの削除時
+     */
     func deleteCell(indexPath:NSIndexPath){
         if(indexPath.section == 3){
             phoneArray.removeObjectAtIndex(indexPath.row)
@@ -262,31 +279,37 @@ class ProfileViewController : UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
+    /**
+     * 保存タップ時
+     */
     @IBAction func saveBtnClick(sender: AnyObject) {
-
         var tf = UITextField()
+        
+        ServerMessage.deleteUserData()
+        
+        // 名前
         for(var i=0; i<nameArray.count; i++){
             tf = nameArray.objectAtIndex(i) as! UITextField
             if((tf.text) != nil){
                 ServerMessage.insertUserData(tf.tag, data: tf.text!)
             }
         }
-        
+        // 会社
         if(tfOrganization.text != nil){
             ServerMessage.insertUserData(5, data: tfOrganization.text!)
         }
-        
+        // 誕生日
         if(tfBirthday.text != nil){
             ServerMessage.insertUserData(6, data: tfBirthday.text!)
         }
-        
+        // phone
         for(var j=0; j<phoneArray.count; j++){
             tf = phoneArray.objectAtIndex(j) as! UITextField
             if((tf.text) != nil){
                 ServerMessage.insertUserData(7, data: tf.text!)
             }
         }
-        
+        // email
         for(var k=0; k<emailArray.count; k++){
             tf = emailArray.objectAtIndex(k) as! UITextField
             if((tf.text) != nil){
@@ -295,6 +318,9 @@ class ProfileViewController : UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
+    /**
+     * TextField作成
+     */
     func createTextField(frame:CGRect,text:String,placeholder:String) -> UITextField{
         let textField = UITextField.init(frame: frame)
         textField.delegate = self;

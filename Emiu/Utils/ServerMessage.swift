@@ -11,6 +11,7 @@ import Foundation
 class ServerMessage : NSObject,NSXMLParserDelegate {
     
     static let ud = NSUserDefaults.standardUserDefaults()
+    static let xmlPars = XmlParser()
 
     static func getResultBySql(url:String,command:String) -> Bool{
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -38,7 +39,7 @@ class ServerMessage : NSObject,NSXMLParserDelegate {
         return result
     }
     
-    static func getDataBySql(url:String,command:String,block:(String) -> ()){
+    static func getDataBySql(url:String,command:String,block:(NSData) -> ()){
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: config)
         let url = NSURL(string: url)
@@ -51,10 +52,11 @@ class ServerMessage : NSObject,NSXMLParserDelegate {
             (data, resp, err) in
             if(data != nil){
                 let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)!
+                print(strData)
                 if (err == nil) {
-                    dataStr = strData as String
+                    //dataStr = strData as String
                     print(dataStr)
-                    block(strData as String)
+                    block(data!)
                 }else{
                     print(err)
                 }
@@ -88,6 +90,18 @@ class ServerMessage : NSObject,NSXMLParserDelegate {
         return result
     }
     
+    static func deleteUserData() -> Bool{
+        let url = "http://triomphe28.php.xdomain.jp/deleteUserData.php"
+        let tmpId = ud.objectForKey("userId")
+        var result = false
+        if((tmpId) != nil){
+            let id = ud.objectForKey("userId") as! String
+            let httpBodyStr = "userId=" + id
+            result = getResultBySql(url,command:httpBodyStr)
+        }
+        return result
+    }
+    
     static func selectUserData(block:(NSArray) -> ()){
         let url = "http://triomphe28.php.xdomain.jp/selectUserData.php"
         let tmpId = ud.objectForKey("userId")
@@ -96,13 +110,49 @@ class ServerMessage : NSObject,NSXMLParserDelegate {
             let httpBodyStr = "userId=" + id
             getDataBySql(url,command:httpBodyStr,block:{(data) in
                 var items = NSArray()
-                if(!data.isEmpty){
-                    items = StrUtil.transformStrByKeyword(data, key: "<result>")
+                if(data.length != 0){
+                    let strData = NSString(data: data, encoding: NSUTF8StringEncoding)!
+                    items = StrUtil.transformDivideByKeyword(strData as String, key: "<result>")
+                    block(items)
                 }
-                block(items)
             })
         }
+    }
+    
+    static func selectFriendData(block:(NSArray) -> ()){
+        let url = "http://triomphe28.php.xdomain.jp/selectFriendData.php"
+        let tmpId = ud.objectForKey("userId")
+        if((tmpId) != nil){
+            let id = ud.objectForKey("userId") as! String
+            let httpBodyStr = "userId=" + id
+            getDataBySql(url,command:httpBodyStr,block:{(data) in
+                let items:NSArray? = NSArray()
+                if(data.length != 0){
+                    do {
+                        xmlPars.initParse(data)
 
+                        if(items != nil){
+                            block(items!)                        
+                        }
+                    } catch {
+                        // Error handling...
+                    }
+                }
+            })
+        }
+    }
+    
+    static func updateFriendData(friendId:String,contactId:String) -> Bool{
+        let url = "http://triomphe28.php.xdomain.jp/updateFriendList.php"
+        let tmpId = ud.objectForKey("userId")
+        var result = false
+        if((tmpId) != nil){
+            let id = ud.objectForKey("userId") as! String
+            print(friendId + " " + contactId)
+            let httpBodyStr = "userId=" + id + "&friendId=" + friendId + "&contactId=" + contactId
+            result = getResultBySql(url,command:httpBodyStr)
+        }
+        return result
     }
     
     /*
